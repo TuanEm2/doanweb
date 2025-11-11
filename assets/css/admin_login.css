@@ -1,0 +1,239 @@
+/* ================================
+    TRANG ĐĂNG NHẬP
+================================= */
+.admin-login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #2e8b57; /* nền xanh lá */
+}
+
+.login-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 400px;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-box input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 10px;
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-login:hover {
+  background-color: #256f45;
+}
+
+.login-logo {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+  min-height: 18px;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+.shake {
+  animation: shake 0.3s ease;
+}
+
+/* ================================
+    TRANG ADMIN (LAYOUT CHUNG)
+================================= */
+.admin-body {
+  background-color: #f4f7f6;
+  margin: 0;
+  padding: 0;
+  font-family: "Gothic A1", sans-serif;
+}
+
+.admin-wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* --- SIDEBAR --- */
+.admin-sidebar {
+  flex-shrink: 0;
+  height: 100vh;
+  overflow-y: auto;
+  width: 250px;
+  background-color: #012a1f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #034d3b;
+}
+
+.admin-nav {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.admin-nav li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  color: #ccc;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.admin-nav li a:hover {
+  background-color: #034d3b;
+  color: white;
+}
+
+.admin-nav li.active a {
+  background-color: #046a53;
+  color: white;
+  font-weight: bold;
+}
+
+/* --- NỘI DUNG CHÍNH --- */
+.admin-content {
+  flex: 1;
+  padding: 30px;
+  background-color: #f9fafb;
+  overflow-y: auto; /* cho phép cuộn */
+}
+
+/* --- HEADER CHÍNH --- */
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 15px 35px;
+  border: 1px solid #e0e0e0;
+  position: sticky;
+  top: 0;
+  margin-bottom: 20px;
+  z-index: 100;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Cột trái - tiêu đề thay đổi theo tab */
+#pageTitle {
+  flex: 1;
+  text-align: left;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #014d37;
+  white-space: nowrap;
+}
+
+/* Cột giữa - Bảng điều khiển (cố định, to hơn, đậm hơn) */
+.header-center-title {
+  flex: 1;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #012a1f;
+  letter-spacing: 0.5px;
+}
+
+/* Cột phải - Xin chào Admin */
+.admin-user-info {
+  flex: 1;
+  text-align: right;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.admin-user-info span {
+  margin-right: 5px;
+}
+
+.admin-user-info a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.admin-user-info a:hover {
+  text-decoration: underline;
+}
+
+/* --- BẢNG CHUNG --- */
+/* Đã loại bỏ .stat-boxes, .stat-box, và .sales-table */
+
+.content-table {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.content-table h3 {
+  margin-top: 0;
+  color: #012a1f;
+}
+
+.content-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.content-table th,
+.content-table td {
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  text-align: center;
+}
+
+.content-table thead {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+.content-table a {
+  color: #c0a062;
+  text-decoration: none;
+}

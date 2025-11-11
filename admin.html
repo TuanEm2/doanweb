@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - SỢI Stu</title>
+
+  <link rel="stylesheet" href="cart.html">
+  <link rel="stylesheet" href="user.html">
+  <link rel="stylesheet" href="cart.html">
+
+
+  <link rel="stylesheet" href="assets/css/admin-orders.css" />
+  <link rel="stylesheet" href="assets/css/admin-products.css" />
+  <link rel="stylesheet" href="assets/css/admin_login.css" />
+  <link rel="stylesheet" href="assets/css/admin-quanlyUsers.css">
+  <link rel="stylesheet" href="assets/css/admin-imports.css" />
+  <link rel="stylesheet" href="assets/css/admin-price.css">
+  <link rel="stylesheet" href="assets/css/admin-stock.css">
+
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <script defer src="assets/js/data.js"></script>
+  <script defer src="assets/js/index-infor-user.js"></script>
+  <script defer src="assets/js/admin-orders.js"></script>
+  <script defer src="assets/js/admin-products.js"></script>
+  <script defer src="assets/js/admin-quanlyUsers.js"></script>
+  <script defer src="assets/js/admin-accept.js"></script>
+  <script defer src="assets/js/admin-imports.js"></script>
+  <script defer src="assets/js/admin-price.js"></script>
+  <script defer src="assets/js/admin-stock.js"></script>
+
+  
+</head>
+
+<body class="admin-body">
+  <!-- ======== LOGIN PAGE ======== -->
+  <div class="admin-login-page">
+    <div class="login-box">
+      <img src="assets/images/logo.png" alt="Logo shop" class="login-logo" />
+      <form class="login-form">
+        <h2>Đăng nhập quản trị</h2>
+        <input type="text" id="username" placeholder="Tài khoản" required />
+        <input type="password" id="password" placeholder="Mật khẩu" required />
+        <p class="error-message" id="loginError"></p>
+        <button type="submit" class="btn-login">Đăng nhập</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="admin-wrapper">
+    <aside class="admin-sidebar">
+      <div class="admin-logo">SỢI (Admin)</div>
+      <ul class="admin-nav">
+        <li class="active" data-section="products"> <a href="#">
+            <i class="fa-solid fa-shirt"></i> Quản lý Sản phẩm
+          </a>
+        </li>
+        <li data-section="orders">
+          <a href="#">
+            <i class="fa-solid fa-box"></i> Quản lý Đơn hàng
+          </a>
+        </li>
+        <li data-section="users">
+          <a href="#">
+            <i class="fa-solid fa-users"></i> Quản lý Người dùng
+          </a>
+        </li>
+        <li data-section="imports">
+            <a href="#">
+                <i class="fa-solid fa-truck"></i> Quản lý Nhập hàng
+            </a>
+        </li>
+        <li data-section="price">
+            <a href="#">
+                <i class="fa-solid fa-dollar-sign"></i> Quản lý Giá bán
+            </a>
+        </li>
+        <li data-section="stock">
+            <a href="#">
+                <i class="fa-solid fa-warehouse"></i> Quản lý Tồn kho
+            </a>
+        </li>
+      </ul>
+    </aside>
+
+    <main class="admin-content">
+      <header class="admin-header">
+        <h2 id="pageTitle">Quản lý Sản phẩm</h2> <div class="header-center-title">Bảng điều khiển</div>
+        <div class="admin-user-info">
+          <span>Xin chào, Admin!</span>
+          <a href="#" id="logoutBtn">(Đăng xuất)</a>
+        </div>
+      </header>
+
+
+      <section class="admin-section" id="products" style="display: block;"> <div class="products-header">
+          <label for="filterType">Lọc theo loại sản phẩm:</label>
+          <select id="filterType">
+            <option value="all">Tất cả</option>
+            <option value="Polo">Polo</option>
+            <option value="Jacket">Jacket</option>
+            <option value="T-Shirt">T-Shirt</option>
+            <option value="Shirt">Shirt</option>
+          </select>
+          <div class="search-box">
+            <input type="text" id="searchProduct" placeholder="🔍 Tìm sản phẩm...">
+          </div>
+        </div>
+        
+        <button class="add-btn">+ Thêm sản phẩm</button>
+        <div class="products-table">
+          <table id="productsTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Hình</th>
+                <th>Tên Sản Phẩm</th>
+                <th>Loại Sản Phẩm</th>
+               <th>Hành Động</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="admin-section" id="orders" style="display: none;">
+        <div class="orders-header">
+          <label for="filterStatus">Lọc theo trạng thái:</label>
+          <select id="filterStatus">
+            <option value="all">Tất cả</option>
+            <option value="processing">Đang xử lý</option>
+            <option value="delivered">Đã giao</option>
+            <option value="canceled">Đã hủy</option>
+          </select>
+
+          <label for="startDate">Từ ngày:</label>
+          <input type="date" id="startDate">
+
+          <label for="endDate">Đến ngày:</label>
+          <input type="date" id="endDate">
+
+          <button id="filterDateBtn" class="btn-filter">Lọc</button>
+
+           <div class="search-box">
+            <input type="text" id="searchOrder" placeholder="🔍 Tìm kiếm đơn hàng...">
+          </div>
+        </div>
+
+        <div class="orders-table">
+          <table id="ordersTable">
+            <thead>
+              <tr>
+                <th>Mã Đơn Hàng</th>
+                <th>Tên Khách Hàng</th>
+                <th>Số Lượng</th>
+                <th>Tổng Tiền</th>               
+                <th>Ngày Đặt</th>
+                <th>Trạng Thái</th>
+                <th>Thông tin đơn hàng</th>
+                <th>Hành Động</th>
+              </tr>
+            </thead>
+            <tbody>
+              </tbody>
+          </table>
+        </div>
+        <!-- ẩn hiện chi tiết đơn hàng -->
+          <div id="orderModal" class="modal-overlay" style="display:none;">
+            <div class="modal-content" style="width: 600px;">
+            <span class="close-btn" id="modalCloseBtn">&times;</span>
+            
+            <h3>Chi tiết Đơn hàng: <span id="modalOrderId" style="color: #c0392b;"></span></h3>
+            
+            <div class="modal-section">
+                <h4>Thông tin khách hàng</h4>
+                <div id="modalCustomerInfo">
+                    </div>
+            </div>
+            
+            <div class="modal-section">
+                <h4>Các sản phẩm</h4>
+                <ul id="modalOrderItems" class="modal-item-list">
+                    </ul>
+            </div>
+            
+            <div class="modal-footer">
+                <strong>Tổng cộng: <span id="modalOrderTotal" style="color: #c0392b; font-size: 1.2em;"></span></strong>
+            </div>
+        </div>
+        </div>
+      </section>
+
+
+      <section class="admin-section" id="users" style="display: none;">
+
+        <div class="users-subsection">
+          <h4>Tài khoản Admin</h4>
+          <table id="adminUsersTable">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Password</th>
+              </tr>
+            </thead>
+            <tbody>
+              </tbody>
+          </table>
+        </div>
+
+        <div class="users-subsection">
+          <h4>Tài khoản Khách hàng</h4>
+          <div class="users-header">
+            <div class="search-box">
+              <input type="text" id="searchCustomer" placeholder="🔍 Tìm khách hàng...">
+            </div>
+          </div>
+
+          <table id="customerUsersTable">
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Password</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>SDT</th>
+                <th>Địa chỉ</th>
+                <th>Thời gian</th>
+                <th>Trạng thái</th>
+                <th>Hành Động</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+
+          <button class="add-customer-btn">+ Thêm Khách hàng</button>
+        </div>
+      </section>
+
+
+      <section class="admin-section" id="imports" style="display: none;">
+          <div class="imports-header">
+              <label for="filterImportStatus">Lọc theo trạng thái:</label>
+              <select id="filterImportStatus">
+                  <option value="all">Tất cả</option>
+                  <option value="pending">Đang chờ</option>
+                  <option value="completed">Đã HT</option>
+              </select>
+              <label for="importStartDate">Từ ngày:</label>
+              <input type="date" id="importStartDate">
+
+              <label for="importEndDate">Đến ngày:</label>
+              <input type="date" id="importEndDate">
+
+              <button id="filterImportDateBtn" class="btn-filter">Lọc</button>
+              
+              <div class="search-box">
+                  <input type="text" id="searchImport" placeholder="🔍 Tìm kiếm phiếu nhập...">
+              </div>
+          </div>
+
+          <div class="imports-table">
+              <table id="importsTable">
+                  <thead>
+                      <tr>
+                          <th>ID Nhập</th>
+                          <th>Mã SP</th>
+                          <th>Tên Sản Phẩm</th>
+                          <th>Size</th>
+                          <th>Số Lượng</th>
+                          <th>Giá Nhập (Đ/vị)</th>
+                          <th>Ngày Nhập</th>
+                          <th>Trạng Thái</th>
+                          <th>Hành Động</th>
+                      </tr>
+                  </thead>
+                  <tbody></tbody>
+              </table>
+              <button class="add-import-btn">+ Thêm phiếu nhập</button>
+          </div>
+      </section>
+
+
+      <section class="admin-section" id="price" style="display: none;">
+          <div class="price-header">
+              <h3>Quản Lý Tỷ Lệ Lợi Nhuận & Giá Bán</h3>
+              <div class="search-box">
+                  <input type="text" id="searchPrice" placeholder="🔍 Tìm sản phẩm...">
+              </div>
+          </div>
+
+          <div class="price-table">
+              <table id="priceTable">
+                  <thead>
+                      <tr>
+                          <th>ID</th>
+                          <th>Tên Sản Phẩm</th>
+                          <th>Loại</th>
+                          <th>Giá Vốn (Mới nhất)</th>
+                          <th>Tỷ Lệ Lợi Nhuận (%)</th>
+                          <th>Giá Bán (Hiện tại)</th>
+                          <th>Hành Động</th>
+                      </tr>
+                  </thead>
+                  <tbody></tbody>
+              </table>
+          </div>
+      </section>
+
+      
+      <section class="admin-section" id="stock" style="display: none;">
+
+          <div class="stock-header">
+            <div class="stock-filters">
+                <label for="stockFilterType">Lọc theo loại:</label>
+                <select id="stockFilterType">
+                    <option value="all">Tất cả</option>
+                    <option value="Jacket">Jacket</option>
+                    <option value="T-Shirt">T-Shirt</option>
+                    <option value="Polo">Polo</option>
+                    <option value="Shirt">Shirt</option>
+                </select>
+
+                <div class="search-box">
+                    <input type="text" id="stockSearchInput" placeholder="🔍 Tìm sản phẩm...">
+                </div>
+            </div>
+          </div>
+
+          <div class="stock-table">
+            <table id="stockTable">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Hình</th>
+                  <th>Tên Sản Phẩm</th>
+                  <th>Loại Sản Phẩm</th>
+                  <th>Tồn kho</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+      </section>
+    </main>
+  </div>
+    <div id="stockModal" class="modal">
+      <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h3>Chi tiết Tồn kho Sản phẩm</h3>
+          <p id="modalProductName" style="font-weight: bold;"></p>
+          <div id="modalSizeDetails">
+              </div>
+      </div>
+    </div>
+</body>

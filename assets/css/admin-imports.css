@@ -1,0 +1,171 @@
+/* ====================== KHUNG CHUNG VÀ BẢNG ====================== */
+
+/* Container chứa bảng */
+.imports-table {
+  position: relative;
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Bảng */
+#importsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+#importsTable th,
+#importsTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+#importsTable th {
+  background-color: #256f45; /* Màu xanh đậm giống header bảng products */
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+/* ====================== HEADER & TÌM KIẾM ====================== */
+.imports-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 15px;
+  margin-bottom: 15px;
+  background: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.imports-header label {
+  font-weight: 600;
+  color: #333;
+}
+
+.imports-header select,
+.imports-header input[type="date"]
+ {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.imports-header .btn-filter {
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.imports-header .btn-filter:hover {
+  background-color: #256f45;
+}
+
+/* ====================== NÚT THÊM PHIẾU NHẬP ====================== */
+.add-import-btn {
+    /* Tái sử dụng style của .add-btn và đặt lên góc trên bên phải */
+    position: relative; 
+    display: block; 
+    margin-left: auto; 
+    margin-bottom: 15px; 
+    margin-right: 0;
+    
+    padding: 10px 16px;
+    background-color: #027f4f; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.add-import-btn:hover {
+  background-color: #014d37;
+}
+
+/* ====================== FORM NHẬP HÀNG (TRONG BẢNG) ====================== */
+
+/* Dạng hàng (row) khi đang chỉnh sửa/thêm mới */
+#importsTable tr.editing td {
+  background-color: #fffbe6;
+  transition: 0.2s;
+}
+
+/* Form tổng thể */
+.import-form {
+    padding: 0 !important;
+}
+
+/* Container chứa các input size */
+#sizeInputsContainer {
+    border: 1px dashed #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fcfcfc;
+}
+
+#sizeInputsContainer h4 {
+    margin-top: 0;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Các hàng nhập size/số lượng/giá */
+.size-row input,
+.size-row select {
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.size-row .btn-remove-size {
+    background: #e74c3c !important;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 0 10px;
+    font-weight: bold;
+}
+
+/* Nút thêm size inline */
+#addSizeRowBtn {
+    background: #2e8b57 !important;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+#addSizeRowBtn:hover {
+    background: #256f45 !important;
+}
+
+/* Nút Lưu/Hủy (footer form) */
+.btn-save-inline {
+    background-color: #28a745;
+}
+
+.btn-cancel-inline {
+    background-color: #dc3545;
+}

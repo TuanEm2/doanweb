@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng - SỢI Stu</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/index-infor-user.css">
+    <link rel="stylesheet" href="assets/css/index-infor-user.css">
+
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="top-bar">
+        <p class="marquee-content">
+            <span>International DDP Shipping available.</span>
+            <span>Buy more, save more on Bodyswear.</span>
+            <span>Sign up to our newsletter for 10% off your first order.</span>
+
+            <span>International DDP Shipping available.</span>
+            <span>Buy more, save more on Bodyswear.</span>
+            <span>Sign up to our newsletter for 10% off your first order.</span>
+        </p>
+    </div>
+
+    <header id="header">
+        <div id="logo">
+            <a href="index.html"></a>
+            <img src="assets/images/logo.png" alt="SOI Stu">
+        </div>
+
+        <div id="title">
+            <h1>S Ợ I</h1>
+        </div>
+
+        <nav id="nav">
+            <ul>
+                <li class="user-item" id="userAccountItem">
+                    <a>
+                        <i class="fa-solid fa-user" id="userIcon"></i>
+                        <span id="userNameDisplay">Tài khoản</span>
+                    </a>
+
+                    <ul class="user-item-menu" id="userItemMenu">
+                        <li class="user-item-choose" id="menuInfo" style="display: none;"><a href="#"
+                            >thông tin tài khoản</a></li>
+                                
+                        <li class="user-item-choose" id="menuLogout" style="display: none;"><a href="#"
+                            >đăng xuất</a></li>
+                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="cart-container">
+
+        <div class="cart-header">
+            <h1 class="cart-title">Cart</h1>
+            <a href="index.html" class="return-link">Return To Store</a>
+        </div>
+
+        <div class="cart-items-list" id="cart-items-list">
+        </div>
+
+        <div class="cart-summary">
+            <div class="total-price">Tổng Tiền:
+                <strong id="cart-total-price">$0.00</strong>
+            </div>
+            <button class="btn-checkout">Đặt Hàng</button>
+        </div>
+
+    </main>
+
+    <div id="userInfoModal" class="modal-overlay">
+       <div class="user-info-modal">
+    <h2>Thông Tin Tài Khoản</h2>
+
+    <div class="user-info-content">
+        <div id="modalEmail">
+            <span class="label">Email:</span>
+            <span class="value"></span>
+        </div>
+        
+        <div id="modalFirstName">
+            <span class="label">Họ:</span>
+            <span class="value"></span>
+        </div>
+        
+        <div id="modalLastName">
+            <span class="label">Tên:</span>
+            <span class="value"></span>
+        </div>
+        
+        <div id="modalPhone">
+            <span class="label">SĐT:</span>
+            <span class="value"></span>
+        </div>
+        
+        <div id="modalAddress">
+            <span class="label">Địa chỉ:</span>
+            <span class="value"></span>
+        </div>
+    </div>
+
+    <div class="modal-actions">
+        <button class="btn-action btn-close-modal" id="btn-close-modal">Đóng</button>
+        <button class="btn-action btn-edit-info" id="btn-edit-info">Sửa thông tin</button>
+        <button class="btn-action btn-cancel-info" id="btn-cancel-info">Hủy</button>
+        <button class="btn-action btn-save-info" id="btn-save-info">Lưu</button>
+    </div>
+</div>
+    </div>
+
+
+    <div id="checkoutModal" class="modal-overlay">
+
+        <div class="checkout-modal-content">
+
+            <h2>Xác Nhận Đơn Hàng</h2>
+
+            <div class="checkout-columns-container">
+
+                <div class="checkout-column-left">
+
+                    <div class="checkout-section">
+                        <h3><i class="fa-solid fa-user"></i> Thông tin người nhận</h3>
+                        <div class="customer-info-details">
+                            <p><strong>Tên:</strong> <span id="checkoutUserName">...</span></p>
+                            <p><strong>Email:</strong> <span id="checkoutUserEmail">...</span></p>
+                        </div>
+                    </div>
+
+                    <div class="checkout-section">
+                        <h3><i class="fa-solid fa-location-dot"></i> 1. Địa chỉ giao hàng</h3>
+                        <div class="address-options">
+                            <label>
+                                <input type="radio" name="addressOption" value="default" checked>
+                                Sử dụng địa chỉ mặc định:
+                                <strong id="defaultAddressDisplay">(Đang tải...)</strong>
+                            </label>
+                            <label>
+                                <input type="radio" name="addressOption" value="new">
+                                Nhập địa chỉ giao hàng mới:
+                            </label>
+                            <input type="text" id="newAddressInput" placeholder="Nhập địa chỉ của bạn..."
+                                style="display:none;">
+                        </div>
+                    </div>
+
+                    <div class="checkout-section">
+                        <h3><i class="fa-solid fa-credit-card"></i> 2. Phương thức thanh toán</h3>
+                        <div class="payment-options">
+                            <label>
+                                <input type="radio" name="paymentMethod" value="cash" checked>
+                                Thanh toán khi nhận hàng (Tiền mặt)
+                            </label>
+                            <label>
+                                <input type="radio" name="paymentMethod" value="transfer">
+                                Chuyển khoản ngân hàng
+                            </label>
+                            <label>
+                                <input type="radio" name="paymentMethod" value="online">
+                                Thanh toán trực tuyến (Momo, VNPAY...)
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="checkout-column-right">
+
+                    <div class="checkout-section" id="summary-section">
+                        <h3><i class="fa-solid fa-receipt"></i> 3. Sản phẩm</h3>
+
+                        <div id="checkoutProductList" class="checkout-product-list">
+                        </div>
+                        <hr class="summary-divider">
+
+                        <p>
+                            <span>Tổng tiền hàng:</span>
+                            <strong id="checkoutTotalPrice">...</strong>
+                        </p>
+                        <p>
+                            <span>Phí vận chuyển:</span>
+                            <strong>Miễn phí</strong>
+                        </p>
+                        <hr>
+                        <p class="final-total">
+                            <span>Thành tiền:</span>
+                            <strong id="checkoutFinalPrice">...</strong>
+                        </p>
+
+                        <div class="qr-code-container">
+                            <img src="assets/images/bank-qr.png" alt="QR Chuyển khoản" id="qrBankImage"
+                                class="qr-image">
+                            <img src="assets/images/momo-qr.png" alt="QR Momo" id="qrMomoImage" class="qr-image">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="checkout-actions">
+                <button id="confirmOrderBtn" class="btn-checkout">Xác nhận Đặt Hàng</button>
+                <button id="cancelCheckoutBtn" class="btn-cancel-checkout">Hủy bỏ</button>
+            </div>
+
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-column">
+                <h3>Về SỢI</h3>
+                <p>Cái tên SỢI được tạo ra rất ngẫu hứng, xuất phát từ "Chuỗi ngày u buồn về sự nghiệp, tương lai trong
+                    quá khứ của chính mình"- theo lời chia sẻ của SỢI's founder.</p>
+                <br>
+                <h3>CÔNG TY TNHH SỢI</h3>
+            </div>
+
+            <div class="footer-column" class="address-info">
+                <h3>Địa chỉ</h3>
+                <p><strong>- Thành phố Hồ Chí Minh:</strong></p>
+                <p>720A Điện Biên Phủ,</p>
+                <p> Phường 22, Bình Thạnh.</p>
+                <br>
+                <p><strong>Điện thoại:</strong> 1900 0000</p>
+                <p><strong>Email:</strong> soi_studios.vn@gmail.com</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Hỗ trợ khách hàng</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Giới thiệu Degrey</a></li>
+                    <li><a href="#">Kiểm tra đơn hàng</a></li>
+                    <li><a href="#">Hệ thống cửa hàng</a></li>
+                    <li><a href="#">Hướng dẫn đặt hàng</a></li>
+                    <li><a href="#">Chính sách và quy định</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Thông tin sở hữu</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column contact-info">
+                <h3>Chăm sóc khách hàng</h3>
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <span class="phone-group">
+                        1900 0000
+                    </span>
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    soi_studios.vn@gmail.com
+                </p>
+
+                <br>
+
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2025 SOI VIETNAM</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/index-infor-user.js"></script>
+    <script src="assets/js/products.js"></script>
+    <script src="assets/js/script.js"></script>
+
+
+</body>
+
+</html>

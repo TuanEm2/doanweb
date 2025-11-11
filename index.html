@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SỢI Stu</title>
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/products.css">
+    <link rel="stylesheet" href="assets/css/index-detail.css">
+    <link rel="stylesheet" href="assets/css/index-filter.css">
+    <link rel="stylesheet" href="assets/css/index-infor-user.css">
+    <link rel="stylesheet" href="assets/css/ad-slider.css">
+
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="top-bar">
+        <p class="marquee-content">
+            <span>International DDP Shipping available.</span>
+            <span>Buy more, save more on Bodyswear.</span>
+            <span>Sign up to our newsletter for 10% off your first order.</span>
+
+            <span>International DDP Shipping available.</span>
+            <span>Buy more, save more on Bodyswear.</span>
+            <span>Sign up to our newsletter for 10% off your first order.</span>
+        </p>
+    </div>
+    <header id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="SOI Stu">
+            </a>
+        </div>
+
+        <div id="title">
+            <h1>S Ợ I</h1>
+        </div>
+
+        <nav id="nav">
+            <ul>
+                <li class="user-item" id="userAccountItem">
+                    <a>
+                        <i class="fa-solid fa-user" id="userIcon"></i>
+                        <span id="userNameDisplay">Tài khoản</span>
+                    </a>
+
+                    <ul class="user-item-menu" id="userItemMenu">
+                        <li class="user-item-choose" id="menuInfo" style="display: none;"><a href="#"
+                            >thông tin tài khoản</a></li>
+                        <li class="user-item-choose" id="menuOrders" style="display: none;"><a href="#"
+                            >đơn mua</a></li>
+                        <li class="user-item-choose" id="menuLogout" style="display: none;"><a href="#"
+                            >đăng xuất</a></li>
+
+                        <li class="user-item-choose" id="menuLogin" style="display: block;"><a href="user.html">đăng
+                                nhập</a></li>
+                        <li class="user-item-choose" id="menuRegister" style="display: block;"><a href="user.html">đăng
+                                ký</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="cart.html" id="cartLink" style="position: relative;"> <i
+                            class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-count hidden">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="search-wrapper">
+            <div class="selective-box">
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-input" class="search-no-box" placeholder="Tìm kiếm sản phẩm ..."
+                        spellcheck="false" autocomplete="off">
+                </div>
+
+
+                <div class="filter">
+                    <span>Filter</span>
+                    <i class="fa-solid fa-filter"></i>
+                </div>
+            </div>
+
+            <div id="search-suggestions-box" class="search-suggestions-box hidden">
+                <div id="search-history-container">
+                    <div class="suggestion-title">
+                        <span>Lịch sử tìm kiếm</span>
+                        <i id="clear-history-btn" class="fa-solid fa-xmark" title="Xóa lịch sử"></i>
+                    </div>
+                    <ul id="search-history-list">
+                    </ul>
+                </div>
+                <div id="search-suggestion-container" class="hidden">
+                    <div class="suggestion-title">Gợi ý sản phẩm</div>
+                    <ul id="search-suggestion-list">
+                    </ul>
+                </div>
+            </div>
+
+            <div id="search-filter-box" class="hidden">
+                <div class="search-filter-content">
+                    <div class="filter-group">
+                        <h3 class="filter-heading">Category</h3>
+                        <hr>
+                        <label class="filter-option-label">
+                            <input type="checkbox" name="category" value="Jacket"> Jacket
+                        </label>
+                        <label class="filter-option-label">
+                            <input type="checkbox" name="category" value="T-Shirt"> T-Shirt
+                        </label>
+                        <label class="filter-option-label">
+                            <input type="checkbox" name="category" value="Polo"> Polo
+                        </label>
+                        <label class="filter-option-label">
+                            <input type="checkbox" name="category" value="Shirt"> Shirt
+                        </label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-heading">Size</h3>
+                        <hr>
+                        <label class="filter-option-label">
+                            <input type="checkbox" name="size" value="XS"> XS
+                        </label>
+                        <label class="filter-option-label">
+                            <input type="checkbox" name="size" value="S"> S
+                        </label>
+                        <label class="filter-option-label">
+                            <input type="checkbox" name="size" value="M"> M
+                        </label>
+                        <label class="filter-option-label">
+                            <input type="checkbox" name="size" value="L"> L
+                        </label>
+                        <label class="filter-option-label">
+                            <input type="checkbox" name="size" value="XL"> XL
+                        </label>
+                        <label class="filter-option-label">
+                            <input type="checkbox" name="size" value="XXL"> XXL
+                        </label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-heading">Price</h3>
+                        <hr>
+                        <div class="price-inputs">
+                            <div class="price-input-container">
+                                <span>Min</span>
+                                <input type="number" id="min-price" name="min-price" placeholder="500.000">
+                            </div>
+                            <div class="price-input-container">
+                                <span>Max</span>
+                                <input type="number" id="max-price" name="max-price" placeholder="10.000.000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-apply-filter">Apply Filters</button>
+                </div>
+            </div>
+        </div>
+         <section class="image-slider-container">
+            <div class="image-slider-wrapper">
+
+                <div class="image-slide">
+                    <img src="assets/images/Blue Modern Cyber Monday Sale Banner.png" alt="Quảng cáo 1">
+                </div>
+
+                <div class="image-slide">
+                    <img src="assets/images/Simple Clothes Rack Photo Fashion Facebook Post.png" alt="Quảng cáo 2">
+                </div>
+
+                <div class="image-slide">
+                    <img src="assets/images/Gemini_Generated_Image_fsiistfsiistfsii.png" alt="Quảng cáo 3">
+                </div>
+
+            </div>
+            <button class="slider-nav-btn prev" id="slider-prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="slider-nav-btn next" id="slider-next"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="slider-pagination" id="slider-dots"></div>
+        </section>
+        <div class="category-bar">
+            <ul class="category-ul">
+                <li>
+                    <a href="#recommend" class="btn-all active">Shop All</a>
+                </li>
+
+                <li>
+                    <a href="#recommend" class="btn-jackets">Jacket</a>
+                </li>
+
+                <li>
+                    <a href="#recommend" class="btn-tshirts">T-Shirt</a>
+                </li>
+
+                <li>
+                    <a href="#recommend" class="btn-polos">Polo</a>
+                </li>
+
+                <li>
+                    <a href="#recommend" class="btn-shirts">Shirt</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="product-list">
+        </div>
+
+        <div class="pagination">
+            <ul class="paganigation-ul">
+
+            </ul>
+        </div>
+
+        <p class="no-product-search hidden">// No product for search</p>
+
+    </main>
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-column">
+                <h3>Về SỢI</h3>
+                <p>Cái tên SỢI được tạo ra rất ngẫu hứng, xuất phát từ "Chuỗi ngày u buồn về sự nghiệp, tương lai trong
+                    quá khứ của chính mình"- theo lời chia sẻ của SỢI's founder.</p>
+                <br>
+                <h3>CÔNG TY TNHH SỢI</h3>
+            </div>
+
+            <div class="footer-column" class="address-info">
+                <h3>Địa chỉ</h3>
+                <p><strong>- Thành phố Hồ Chí Minh:</strong></p>
+                <p>720A Điện Biên Phủ,</p>
+                <p> Phường 22, Bình Thạnh.</p>
+                <br>
+                <p><strong>Điện thoại:</strong> 1900 0000</p>
+                <p><strong>Email:</strong> soi_studios.vn@gmail.com</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Hỗ trợ khách hàng</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Giới thiệu Degrey</a></li>
+                    <li><a href="#">Kiểm tra đơn hàng</a></li>
+                    <li><a href="#">Hệ thống cửa hàng</a></li>
+                    <li><a href="#">Hướng dẫn đặt hàng</a></li>
+                    <li><a href="#">Chính sách và quy định</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Thông tin sở hữu</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column contact-info">
+                <h3>Chăm sóc khách hàng</h3>
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <span class="phone-group">
+                        1900 0000
+                    </span>
+                </p>
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    soi_studios.vn@gmail.com
+                </p>
+
+                <br>
+
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>Copyright © 2025 SOI VIETNAM</p>
+        </div>
+    </footer>
+
+    <div id="userInfoModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="user-info-modal">
+    <h2>Thông Tin Tài Khoản</h2>
+
+    <div class="user-info-content">
+        <div id="modalEmail">
+            <span class="label">Email:</span>
+            <span class="value"></span>
+        </div>
+        
+        <div id="modalFirstName">
+            <span class="label">Họ:</span>
+            <span class="value"></span>
+        </div>
+        
+        <div id="modalLastName">
+            <span class="label">Tên:</span>
+            <span class="value"></span>
+        </div>
+        
+        <div id="modalPhone">
+            <span class="label">SĐT:</span>
+            <span class="value"></span>
+        </div>
+        
+        <div id="modalAddress">
+            <span class="label">Địa chỉ:</span>
+            <span class="value"></span>
+        </div>
+    </div>
+
+    <div class="modal-actions">
+        <button class="btn-action btn-close-modal" id="btn-close-modal">Đóng</button>
+        <button class="btn-action btn-edit-info" id="btn-edit-info">Sửa thông tin</button>
+        <button class="btn-action btn-cancel-info" id="btn-cancel-info">Hủy</button>
+        <button class="btn-action btn-save-info" id="btn-save-info">Lưu</button>
+    </div>
+</div>
+    </div>
+
+    <div id="alert-modal" class="alert-modal">
+        <div class="alert-modal-content">
+            <p id="alert-message">Đây là thông báo!</p>
+            <button id="alert-close-btn" class="btn-apply-filter">OK</button>
+        </div>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay"></div>
+
+    <div id="product-modal" class="product-modal">
+        <span id="modal-close" class="modal-close">&times;</span>
+
+        <div class="modal-content">
+            <div class="modal-image">
+                <img id="modal-product-image" src="assets/images/jackets/Cayo Chore Jacket Navy.png"
+                    alt="Product Image">
+            </div>
+
+            <div class="modal-details">
+                <h2 id="modal-product-name">Atticus Open Neck Jumper</h2>
+
+                <div class="modal-options">
+                    <span class="option-label">Size:</span>
+                    <div class="size-selector">
+                        <span class="size-option">XS</span>
+                        <span class="size-option">S</span>
+                        <span class="size-option">M</span>
+                        <span class="size-option">L</span>
+                        <span class="size-option">XL</span>
+                        <span class="size-option">XXL</span>
+                    </div>
+                </div>
+
+                <p id="modal-stock-info" style="margin-top: 10px; font-size: 14px; color: #555; text-align: left;"></p>
+
+                <div class="modal-options">
+                    <div class="quantity-selector">
+                        <button class="quantity-btn" data-action="decrease">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-btn" data-action="increase">+</button>
+                    </div>
+                </div>
+
+                <p id="modal-product-price" class="modal-price">Price: 5.000.000đ</p>
+
+                <button class="btn-add-to-cart">Add To Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="orderHistoryModal" class="modal-overlay" onclick="closeOrderHistoryModal(event)">
+
+        <div class="order-history-modal">
+
+            <span class="modal-close-btn" onclick="hideOrderHistoryModal()">&times;</span>
+            <h2>Lịch Sử Đơn Hàng</h2>
+
+            <div class="order-list-container" id="order-list-content">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/index-infor-user.js"></script>
+</body>
+
+</html>

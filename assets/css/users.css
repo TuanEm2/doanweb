@@ -1,0 +1,342 @@
+/* =================================
+  TRANG USER (ĐĂNG NHẬP) - GIỮ NGUYÊN
+=================================
+*/
+/* (Toàn bộ CSS cho trang login được giữ nguyên y hệt như file gốc của bạn) */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gothic-a1-regular {
+  font-family: "Gothic A1", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "gothic-a1-regular", sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+a {
+  text-decoration: none;
+  color: #07261c;
+}
+
+/* ẨN/HIỆN CÁC MÀN HÌNH (Quản lý bởi JS) */
+.page-section {
+  display: none; /* Mặc định ẩn */
+}
+.active-page {
+  display: block; /* Chỉ hiện thị trang đang hoạt động */
+}
+
+/* ------------------- HEADER ------------------- */
+.top {
+  width: 100%;
+  height: 30px;
+  background-color: #07261c;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+.main-header {
+  margin-bottom: -40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  padding-top: 45px;
+}
+
+.logo-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 0;
+}
+.brand-name {
+  font-family: "gothic-a1-regular", sans-serif;
+  flex: 2;
+  text-align: center;
+  font-style: italic;
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  margin-right: 60px;
+}
+
+.header-icons {
+  flex: 1;
+  text-align: right;
+}
+
+.header-icons a {
+  margin-left: 20px;
+  color: #333333;
+  font-size: 20px;
+}
+.header-icons a:hover {
+  color: #086853;
+}
+/* ------------------- MAIN LOGIN/FORM ------------------- */
+.login-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+}
+
+.login-box {
+  background-color: #ffffff;
+  padding: 40px;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  border-radius: 5px;
+}
+.login-box h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  margin-right: 60px;
+}
+.login-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 25px; /* Khoảng cách tiêu chuẩn cho tất cả các input */
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Loại bỏ CSS email-wrapper/email-group không cần thiết nữa */
+
+.login-form input {
+  width: 600px; /* Độ rộng cố định */
+  padding: 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  text-align: left;
+}
+
+p {
+  margin-right: 60px;
+}
+
+.login-form input:focus {
+  border-color: #086853;
+}
+
+.link-row {
+  width: 85%;
+  max-width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+.signup-link {
+  font-weight: bold;
+}
+/* QUAN TRỌNG: In đậm chữ Forgot Your Password */
+.forgot-link {
+  font-weight: bold;
+}
+
+.button-row {
+  width: 85%;
+  max-width: 450px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+
+  gap: 15px;
+}
+
+.btn-signin {
+  flex: 1;
+  padding: 12px 20px;
+  background-color: #07261c;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.btn-signin:hover {
+  background-color: #047844;
+}
+
+.return-link {
+  flex-shrink: 0;
+  font-size: 14px;
+  color: #666;
+  text-decoration: underline;
+}
+.return-link:hover {
+  color: #07261c;
+}
+
+/* --- CSS cho Footer --- */
+.site-footer {
+    background-color: #012a1f;
+    color: #ccc; /* Màu chữ hơi xám, dịu mắt hơn màu trắng tinh */
+    padding-top: 50px;
+}
+
+/* Lớp bọc nội dung bên trong, căn giữa và giới hạn chiều rộng */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    /* Sử dụng Flexbox để tạo layout cột */
+    display: flex;
+    justify-content: space-between; /* Dàn đều các cột */
+    flex-wrap: wrap; /* Cho phép các cột xuống hàng trên màn hình nhỏ */
+}
+
+/* CSS cho mỗi cột */
+.footer-column {
+    flex-basis: 22%; /* Mỗi cột chiếm khoảng 22% chiều rộng */
+    min-width: 250px; /* Chiều rộng tối thiểu trước khi xuống hàng */
+    margin-bottom: 30px;
+    padding: 0 15px; /* Khoảng cách nhỏ giữa các cột */
+}
+
+.footer-column h3 {
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.footer-column p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 10px 0;
+}
+
+/* Danh sách link (Hỗ trợ khách hàng) */
+.footer-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Cột Chăm sóc khách hàng */
+.contact-info p {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.contact-info .phone-group {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.contact-info i {
+    font-size: 1.1rem;
+    margin-right: 12px;
+    width: 20px; /* Đảm bảo icon thẳng hàng */
+}
+
+/* Icon mạng xã hội */
+.social-icons {
+    margin-top: 25px;
+}
+
+.social-icons a {
+    display: inline-flex; /* Sử dụng flex để căn giữa icon */
+    justify-content: center;
+    align-items: center;
+    width: 30px; /* Kích thước icon lớn hơn */
+    height: 30px;
+    color: #ffffff;
+    border-radius: 4px;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 18px; /* Kích thước icon lớn hơn */
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Thanh Copyright ở dưới cùng */
+.footer-bottom {
+    background-color: #012a1f;
+    border-top: 1px solid #333; /* Đường kẻ mờ */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* ------------------- CSS THÊM CHO THÔNG BÁO LỖI ------------------- */
+.error-message {
+    /* Đảm bảo nó được hiển thị như một block để có thể căn giữa */
+    display: block;
+    color: red; /* Màu đỏ cho lỗi */
+    font-size: 12px;
+    margin-top: -15px; /* Đẩy lên sát input */
+    margin-bottom: 40px; /* Tăng khoảng cách dưới để bù trừ cho input đã bị đẩy lên */
+    /* Căn giữa thông báo, quan trọng là phải căn chỉnh với input */
+    text-align: center;
+    width: 600px; /* Bằng kích thước input */
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 60px; /* Điều chỉnh để cân với h1 và p */
+}

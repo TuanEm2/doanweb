@@ -1,0 +1,243 @@
+/* Bảng admin */
+#adminUsersTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+#adminUsersTable th,
+#adminUsersTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+#adminUsersTable th {
+  background-color: #444;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* ====================== KHUNG CHUNG ====================== */
+.users-table {
+  position: relative;
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* ====================== BẢNG NGƯỜI DÙNG ====================== */
+#customerUsersTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+#customerUsersTable th,
+#customerUsersTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+#customerUsersTable th {
+  background-color: #256f45;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+/* ====================== KHUNG CHUNG ====================== */
+.users-subsection {
+  position: relative;
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ====================== BẢNG NGƯỜI DÙNG ====================== */
+#customerUsersTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+#customerUsersTable th,
+#customerUsersTable td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+
+#customerUsersTable th {
+  background-color: #256f45;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+/* ====================== NÚT CHUNG ====================== */
+.add-customer-btn {
+  padding: 10px 16px;
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  position: absolute;
+  bottom: -45px;
+  right: 10px;
+}
+
+.add-customer-btn:hover {
+  background-color: #256f45;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.btn-edit:hover {
+  background-color: #e0ac08;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+/* ====================== HEADER & TÌM KIẾM ====================== */
+.users-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.users-header .search-box input {
+  padding: 7px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 250px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.users-header .search-box input:focus {
+  border-color: #2e8b57;
+  box-shadow: 0 0 4px rgba(46,139,87,0.4);
+  outline: none;
+}
+
+/* ====================== NÚT LƯU & HỦY INLINE ====================== */
+.btn-save-inline,
+.btn-cancel-inline {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn-save-inline { background-color: #28a745; }
+.btn-cancel-inline { background-color: #dc3545; }
+
+/* ====================== HIỆU ỨNG SỬA ====================== */
+#customerUsersTable tr.editing td {
+  background-color: #fffbe6;
+  transition: 0.2s;
+}
+
+#customerUsersTable tr.editing td[contenteditable="true"]:focus {
+  background-color: #fff3b0;
+  outline: 2px solid #ffc107;
+}
+
+
+/* ====================== NÚT MỚI (Reset, Khóa/Mở khóa) ====================== */
+.btn-reset-password {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+  background-color: #007bff; /* Blue */
+  color: white;
+  margin-right: 5px;
+}
+
+.btn-reset-password:hover {
+  background-color: #0056b3;
+}
+
+.btn-lock {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+  background-color: #ff6347; /* Tomato Red */
+  color: white;
+  margin-right: 5px;
+}
+
+.btn-lock:hover {
+  background-color: #e5533d;
+}
+
+/* ====================== TRẠNG THÁI KHÓA/HOẠT ĐỘNG ====================== */
+.status-active {
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}
+
+.status-locked {
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+/* HIỆU ỨNG TÀI KHOẢN BỊ KHÓA */
+#customerUsersTable tr.locked-user td {
+  background-color: #fce2e5; /* Màu nền nhạt để báo hiệu bị khóa */
+  color: #555;
+}

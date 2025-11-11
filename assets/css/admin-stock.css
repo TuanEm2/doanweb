@@ -1,0 +1,126 @@
+/* admin-stock.css */
+
+/* ====================== KHUNG CHUNG BẢNG (Đồng bộ với products-table) ====================== */
+#stock .stock-table {
+  /* Dùng lại style của products-table */
+  position: relative;
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* ====================== BẢNG (Đồng bộ hoàn toàn với #products table) ====================== */
+#stockTable {
+  /* Dùng chung style */
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+#stockTable th,
+#stockTable td {
+  /* Dùng chung style */
+  border: 1px solid #ddd;
+  padding: 10px; 
+  text-align: left; /* Đặt lại thành left như Products */
+  font-size: 14px;
+}
+
+#stockTable th {
+  /* Dùng chung style */
+  background-color: #256f45;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+/* GHI ĐÈ style căn chỉnh của Ảnh (nếu cần) - KẾ THỪA TỪ products.css */
+#stockTable td:nth-child(2) {
+    text-align: center !important; 
+}
+
+
+/* ====================== HEADER/CONTROL LAYOUT (RIÊNG BIỆT) ====================== */
+.stock-header {
+  /* Dùng style layout header riêng */
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+/* Căn chỉnh các phần tử lọc/tìm kiếm theo Products */
+.stock-filters, .date-range-filter {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+    margin-bottom: 15px;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.stock-filters label, .date-range-filter label {
+    font-weight: 600;
+    color: #333;
+    font-size: 15px;
+}
+
+/* Style input/select */
+.stock-filters select, 
+.stock-filters input[type="text"], 
+.date-range-filter input[type="date"] {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.2s;
+    width: 150px;
+}
+
+.stock-filters input[type="text"] {
+    width: 250px; 
+}
+
+/* Nút Tra cứu/Lọc */
+#stockReportBtn {
+    padding: 7px 12px;
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+#stockReportBtn:hover {
+    background-color: #256f45;
+}
+
+
+/* ====================== CẢNH BÁO SẮP HẾT HÀNG ====================== */
+.alert-section {
+    margin-top: 30px;
+    padding: 15px;
+    border: 1px solid #e0ac08;
+    background-color: #fffbe6; 
+    border-radius: 8px;
+}
+
+.alert-section h4 {
+    margin-top: 0;
+    color: #a06e00;
+}
+
+#lowStockList li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #e6e6e6;
+}

@@ -1,0 +1,90 @@
+/* ====================== KHUNG CHUNG BẢNG GIÁ ====================== */
+.price-table { 
+  position: relative;
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* ====================== HEADER BẢNG GIÁ ====================== */
+#price .price-header {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: "Segoe UI", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#price .price-header h3 {
+    margin: 0;
+    color: #027f4f; 
+}
+
+/* ====================== BẢNG VÀ CHỈNH SỬA ====================== */
+#priceTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+#priceTable th,
+#priceTable td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#priceTable th {
+    background-color: #256f45; /* Màu nền header giống bảng sản phẩm */
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+/* Định nghĩa lại style nút SỬA cho bảng giá */
+.btn-edit-price {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+    margin: 2px;
+    background-color: #ffc107; /* Màu vàng */
+    color: #000;
+}
+
+.btn-edit-price:hover {
+    background-color: #e0ac08;
+}
+
+/* HIỆU ỨNG SỬA TRONG BẢNG GIÁ */
+#priceTable tr.editing td {
+    background-color: #fffbe6; 
+    transition: 0.2s;
+}
+
+/* Style cho input tỷ lệ lợi nhuận trong chế độ sửa */
+#priceTable .ratio-input {
+    padding: 4px 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: right;
+    width: 60px;
+}
+
+/* Màu sắc nổi bật cho giá bán hiện tại */
+#priceTable .selling-price,
+#priceTable .selling-price-preview {
+    color: #e74c3c;
+    font-weight: bold;
+}

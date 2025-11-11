@@ -1,0 +1,150 @@
+/* =================================
+  CSS CHO FILTER MODAL (POP-UP LỌC)
+================================= */
+
+/* Container chính của Modal Lọc */
+.filter-modal {
+    display: none; /* Mặc định ẩn */
+    position: absolute;
+    z-index: 2000; /* Nằm trên modal sản phẩm (1001) và overlay (1000) */
+    /* Căn lề phải, dưới header */
+    top: 330px; /* Điều chỉnh dựa trên chiều cao header */
+    right: 110px; /* Điều chỉnh để nằm cạnh nút Filter */
+    width: 300px; /* Chiều rộng của modal */
+}
+
+/* Nội dung bên trong Modal */
+.filter-modal-content {
+    background-color: #ffffff; /* Nền trắng ngả xanh lá nhạt */
+    border-radius: 50px; /* Bo tròn góc */
+    border: 1px solid #3dac78; /* Viền xanh lá đậm */
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Các nhóm Category, Size, Price */
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #012a1f;
+    margin-bottom: 5px;
+}
+
+/* Đường kẻ ngang */
+.filter-group hr {
+    border: 0;
+    height: 1px;
+    background-color: #3dac78;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+/* Định kiểu cho checkbox và label */
+.filter-option-label {
+    display: flex;
+    align-items: center;
+    padding: 2px 8px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    font-size: 12px;
+    color: #333;
+}
+
+/* Hiệu ứng highlight cho option được chọn (giống màu xanh lá cây trong ảnh) */
+.filter-option-label.selected {
+    background-color: #d1e8d4; /* Màu xanh lá nhạt */
+}
+
+/* Hiệu ứng hover cho option (khi chưa chọn) */
+.filter-option-label:hover:not(.selected) {
+    background-color: #e0f0e2;
+}
+
+.filter-option-label input[type="checkbox"] {
+    /* Tùy chỉnh kích thước checkbox */
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+    /* Tùy chỉnh màu sắc (tùy chọn) */
+    accent-color: #3dac78;
+}
+
+/* Nhóm Price input */
+.price-inputs {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.price-input-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-input-container span {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+    text-align: left;
+}
+
+.price-inputs input[type="number"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Nút Apply Filters (tùy chọn) */
+.btn-apply-filter {
+    width: 100%;
+    padding: 10px;
+    background-color: #3dac78;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-apply-filter:hover {
+    background-color: #2e8a5b;
+}
+
+/* Thêm vào phần .filter trong CSS để nó có thể được click */
+.filter {
+    cursor: pointer;
+}
+.search {
+    border-right: 1px solid #000;
+}
+
+/* Ẩn mũi tên tăng/giảm của input[type=number] */
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.quantity-input[type=number] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+/* === CSS BÁO LỖI CHO Ô GIÁ === */
+.price-input-container input.price-input-error {
+    border-color: #e74c3c; /* Viền đỏ */
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.5); /* Bóng mờ đỏ */
+    background-color: #fff9f9; /* Nền hơi hồng */
+}
