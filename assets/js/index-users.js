@@ -54,37 +54,35 @@ function handleLogin() {
   if (registeredUsersJson) {
     const registeredUsers = JSON.parse(registeredUsersJson); // Đây là một Array
 
-// 1. Chỉ tìm người dùng bằng EMAIL trước
-  const foundUser = registeredUsers.find(
-    (user) => user.email === emailValue
-  );
+    // 1. Chỉ tìm người dùng bằng EMAIL trước
+    const foundUser = registeredUsers.find((user) => user.email === emailValue);
 
-  // 2. Kiểm tra xem có tìm thấy EMAIL không
-  if (!foundUser) {
-    alert("❌ Email không tồn tại. Vui lòng kiểm tra lại.");
-    return;
-  }
-
-  // 3.
-  // Nếu tìm thấy email, kiểm tra xem tài khoản có bị khóa không
-  // (Chúng ta dùng foundUser.isLocked === true để chắc chắn)
-  if (foundUser.isLocked === true) {
-    alert("❌ Tài khoản này đã bị khóa. Vui lòng liên hệ quản trị viên.");
-    return; // Dừng lại, không kiểm tra mật khẩu
-  }
-
-  // 4. Nếu không bị khóa, MỚI kiểm tra MẬT KHẨU
-  if (foundUser.password === passwordValue) {
-    // Đăng nhập thành công
-    alert("🎉 Đăng nhập thành công! Chào mừng trở lại.");
-
-    // Lưu thông tin người dùng HIỆN TẠI vào localStorage
-    try {
-      localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(foundUser));
-    } catch (e) {
-      alert("Lỗi khi lưu phiên đăng nhập.");
+    // 2. Kiểm tra xem có tìm thấy EMAIL không
+    if (!foundUser) {
+      alert("❌ Email không tồn tại. Vui lòng kiểm tra lại.");
       return;
     }
+
+    // 3.
+    // Nếu tìm thấy email, kiểm tra xem tài khoản có bị khóa không
+    // (Chúng ta dùng foundUser.isLocked === true để chắc chắn)
+    if (foundUser.isLocked === true) {
+      alert("❌ Tài khoản này đã bị khóa. Vui lòng liên hệ quản trị viên.");
+      return; // Dừng lại, không kiểm tra mật khẩu
+    }
+
+    // 4. Nếu không bị khóa, MỚI kiểm tra MẬT KHẨU
+    if (foundUser.password === passwordValue) {
+      // Đăng nhập thành công
+      alert("🎉 Đăng nhập thành công! Chào mừng trở lại.");
+
+      // Lưu thông tin người dùng HIỆN TẠI vào localStorage
+      try {
+        localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(foundUser));
+      } catch (e) {
+        alert("Lỗi khi lưu phiên đăng nhập.");
+        return;
+      }
 
       // Chuyển hướng đến trang chủ
       window.location.href = "index.html";
@@ -176,7 +174,7 @@ function handleSignup() {
 
   let users = JSON.parse(localStorage.getItem(USER_STORAGE_KEY)) || [];
 
-  if(users.some(user => user.email === email && user !== newUser)) {
+  if (users.some((user) => user.email === email && user !== newUser)) {
     alert("❌ Email này đã được đăng ký. Vui lòng sử dụng email khác.");
     emailInput.focus();
     return;
@@ -217,3 +215,25 @@ function handleResetPassword() {
     alert("❗ Vui lòng nhập địa chỉ email.");
   }
 }
+
+// === LOGIC XỬ LÝ URL NGAY KHI TẢI TRANG (ĐÃ THÊM MỚI) ===
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Lấy phần neo (#...) từ URL (ví dụ: #create_account)
+  const hash = window.location.hash.substring(1);
+
+  // 2. Nếu có một hash hợp lệ (ví dụ: create_account)
+  if (hash) {
+    // Chỉ chấp nhận các hash mà chúng ta có trang tương ứng
+    const validPages = ["login", "create_account", "reset_password"];
+    if (validPages.includes(hash)) {
+      // Hiển thị trang tương ứng (login hoặc create_account)
+      showPage(hash);
+    } else {
+      // Mặc định về trang login nếu hash không hợp lệ
+      showPage("login");
+    }
+  } else {
+    // 3. Nếu không có hash, đảm bảo hiển thị trang login mặc định
+    showPage("login");
+  }
+});
